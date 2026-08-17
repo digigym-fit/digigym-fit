@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-IN">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -57,7 +57,16 @@
         "width": 512,
         "height": 512
       },
-      "areaServed": { "@type": "Country", "name": "India" }
+      "image": "https://digigym.fit/assets/images/og-image.png",
+      "description": "DigiGym makes gym membership and check-in software for gyms and their members in India.",
+      "areaServed": { "@type": "Country", "name": "India" },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "email": "digigym.fit@gmail.com",
+        "areaServed": "IN",
+        "availableLanguage": "en"
+      }
     },
     {
       "@type": "WebSite",
@@ -65,7 +74,7 @@
       "url": "https://digigym.fit/",
       "name": "DigiGym",
       "description": "Gym membership and check-in software for members and gyms.",
-      "inLanguage": "en",
+      "inLanguage": "en-IN",
       "publisher": { "@id": "https://digigym.fit/#organization" }
     },
     {
@@ -73,9 +82,17 @@
       "@id": "https://digigym.fit/#webpage",
       "url": "https://digigym.fit/",
       "name": "DigiGym — Gym membership and check-in, on your phone",
+      "description": "DigiGym gives members a QR check-in and their plan at a glance, and gives gyms their roster, payments and front desk in one app. Made for gyms in India.",
       "isPartOf": { "@id": "https://digigym.fit/#website" },
       "about": { "@id": "https://digigym.fit/#app" },
-      "primaryImageOfPage": "https://digigym.fit/assets/images/og-image.png"
+      "inLanguage": "en-IN",
+      "dateModified": "2026-08-18",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://digigym.fit/assets/images/og-image.png",
+        "width": 1200,
+        "height": 630
+      }
     },
     {
       "@type": "MobileApplication",
@@ -87,6 +104,14 @@
       "image": "https://digigym.fit/assets/images/favicon-512.png",
       "description": "Members check in with a QR code and see exactly where their plan stands. Gyms keep the member roster, plans, payments and the front desk in one place.",
       "publisher": { "@id": "https://digigym.fit/#organization" },
+      "inLanguage": "en-IN",
+      "countriesSupported": "IN",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "INR",
+        "availability": "https://schema.org/InStock"
+      },
       "featureList": [
         "Sign in with a mobile number and one-time password",
         "Truecaller one-tap verification on Android",
