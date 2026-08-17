@@ -1,0 +1,5 @@
+# digigym.fit — everything here is public marketing and legal copy.
+User-agent: *
+Allow: /
+
+Sitemap: https://digigym.fit/sitemap.xml

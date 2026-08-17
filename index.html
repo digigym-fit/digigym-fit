@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DigiGym — Gym membership and check-in, on your phone</title>
+<meta name="description" content="DigiGym gives members a QR check-in and their plan at a glance, and gives gyms their roster, payments and front desk in one app. Made for gyms in India.">
+<link rel="canonical" href="https://digigym.fit/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="theme-color" content="#2196f3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101418" media="(prefers-color-scheme: dark)">
+
+<!-- Open Graph / Twitter. Absolute URLs are required here — a scraper does not
+     resolve relative paths against the page it fetched. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DigiGym">
+<meta property="og:locale" content="en_IN">
+<meta property="og:url" content="https://digigym.fit/">
+<meta property="og:title" content="DigiGym — Gym membership and check-in, on your phone">
+<meta property="og:description" content="Members check in with a QR code and see exactly where their plan stands. Gyms keep the roster, the payments and the front desk in one place.">
+<meta property="og:image" content="https://digigym.fit/assets/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DigiGym — gym membership and check-in, on your phone">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DigiGym — Gym membership and check-in, on your phone">
+<meta name="twitter:description" content="Members check in with a QR code and see exactly where their plan stands. Gyms keep the roster, the payments and the front desk in one place.">
+<meta name="twitter:image" content="https://digigym.fit/assets/images/og-image.png">
+<meta name="twitter:image:alt" content="DigiGym — gym membership and check-in, on your phone">
+
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon-192.png">
+<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/assets/style.css">
+<script>
+/* Applies a saved theme choice before first paint, so a dark-mode visitor
+   never sees a white flash. Anyone who has not chosen falls through to the
+   stylesheet's prefers-color-scheme block. */
+(function(){try{var t=localStorage.getItem('digigym-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();
+</script>
+<script src="/assets/theme.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://digigym.fit/#organization",
+      "name": "DigiGym",
+      "url": "https://digigym.fit/",
+      "email": "digigym.fit@gmail.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://digigym.fit/assets/images/favicon-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "areaServed": { "@type": "Country", "name": "India" }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://digigym.fit/#website",
+      "url": "https://digigym.fit/",
+      "name": "DigiGym",
+      "description": "Gym membership and check-in software for members and gyms.",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://digigym.fit/#organization" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://digigym.fit/#webpage",
+      "url": "https://digigym.fit/",
+      "name": "DigiGym — Gym membership and check-in, on your phone",
+      "isPartOf": { "@id": "https://digigym.fit/#website" },
+      "about": { "@id": "https://digigym.fit/#app" },
+      "primaryImageOfPage": "https://digigym.fit/assets/images/og-image.png"
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://digigym.fit/#app",
+      "name": "DigiGym",
+      "applicationCategory": "HealthAndFitnessApplication",
+      "operatingSystem": "Android, iOS",
+      "url": "https://digigym.fit/",
+      "image": "https://digigym.fit/assets/images/favicon-512.png",
+      "description": "Members check in with a QR code and see exactly where their plan stands. Gyms keep the member roster, plans, payments and the front desk in one place.",
+      "publisher": { "@id": "https://digigym.fit/#organization" },
+      "featureList": [
+        "Sign in with a mobile number and one-time password",
+        "Truecaller one-tap verification on Android",
+        "QR check-in valid for sixty seconds",
+        "Membership plan, expiry date and payment history",
+        "Visit history and check-in calendar",
+        "Gym member roster with plan and last visit",
+        "Register members at the front desk",
+        "PIN-locked check-in stand for a counter tablet",
+        "Live feed of today's check-ins and weekly opening hours"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://digigym.fit/#faq",
+      "isPartOf": { "@id": "https://digigym.fit/#webpage" },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is DigiGym?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "DigiGym is gym membership and check-in software. Members use it to see their plan and payment history, to check in at their gym with a QR code, and to review their own visit history. Gyms use it to keep their member roster, record plans and payments, set their opening hours, and admit members at the door."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I check in at my gym?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Open the app and show the check-in code on your screen. It is valid for sixty seconds and only at that one gym, and it is used up once the front desk scans it. If you would rather not use the app, the desk can check you in by your mobile number instead."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to install the app to be a member?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Your gym can register you at the desk in under a minute, and you can then check in by mobile number without ever installing DigiGym. If you do install it later with the same number, your existing membership and payment records are matched to your account."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does DigiGym take my membership payment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. DigiGym does not process payments. You pay your gym the way you always have, and the gym records that payment against your plan so you can see it in the app. Your membership contract is with your gym, not with DigiGym."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I sign in?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "With your mobile number and a one-time password sent by SMS — there is no password to remember. On Android you can instead verify in one tap with Truecaller if you prefer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a minimum age to use DigiGym?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You must be at least 18 years old to create a DigiGym account and use the app."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site">
+  <a class="brand" href="/">
+    <img src="/assets/images/logo.png" alt="" width="30" height="30">
+    Digi<span>Gym</span>
+  </a>
+  <button class="theme-toggle" type="button" aria-label="Switch theme">
+    <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"></circle>
+      <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+    </svg>
+    <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+    </svg>
+  </button>
+</header>
+
+<main>
+<section class="hero">
+  <h1><span class="line">One app for your gym</span> <span class="line">and everyone in it</span></h1>
+  <p class="tagline">Members check in with a QR code and see exactly where their plan stands. Gyms keep the roster, the payments and the front desk in one place.</p>
+  <div class="cta-row">
+    <!-- TODO: point at the Play Store listing once com.digigym.fit is published. -->
+    <a class="btn btn-primary" href="#">Get DigiGym</a>
+    <a class="btn btn-secondary" href="mailto:digigym.fit@gmail.com">Talk to us about your gym</a>
+  </div>
+  <p class="hero-note">Available in India · Sign in with your mobile number</p>
+</section>
+
+<section class="section" id="members">
+  <h2 class="section-title">For members</h2>
+  <p class="section-lead">Everything you need at the door, and a straight answer on what you have paid for.</p>
+  <div class="features">
+    <div class="feature">
+      <div class="icon" aria-hidden="true">🔐</div>
+      <h3>Sign in with your number</h3>
+      <p>No passwords to remember — a one-time code by SMS, or one-tap Truecaller verification on Android.</p>
+    </div>
+    <div class="feature">
+      <div class="icon" aria-hidden="true">📲</div>
+      <h3>Check in with a QR code</h3>
+      <p>Your app shows a code that is good for sixty seconds. The front desk scans it and you are in.</p>
+    </div>
+    <div class="feature">
+      <div class="icon" aria-hidden="true">🗓️</div>
+      <h3>Your plan and your visits</h3>
+      <p>When your plan expires, every payment you have made, and a calendar of the days you turned up.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="gyms">
+  <h2 class="section-title">For gyms</h2>
+  <p class="section-lead">The desk work of running a gym — who is a member, who has paid, who walked in today.</p>
+  <div class="features">
+    <div class="feature">
+      <div class="icon" aria-hidden="true">📋</div>
+      <h3>Your member roster</h3>
+      <p>Everyone at your gym in one list, with their plan, expiry date and last visit.</p>
+    </div>
+    <div class="feature">
+      <div class="icon" aria-hidden="true">➕</div>
+      <h3>Register at the desk</h3>
+      <p>Add a member in under a minute. They can check in by mobile number without ever installing the app.</p>
+    </div>
+    <div class="feature">
+      <div class="icon" aria-hidden="true">💳</div>
+      <h3>Plans and payments</h3>
+      <p>Record a renewal or end a membership. Payment history is added to, never rewritten.</p>
+    </div>
+    <div class="feature">
+      <div class="icon" aria-hidden="true">🏷️</div>
+      <h3>A check-in stand</h3>
+      <p>Prop a tablet on the counter. It scans a member's QR code, or takes their mobile number instead.</p>
+    </div>
+    <div class="feature">
+      <div class="icon" aria-hidden="true">🔒</div>
+      <h3>Locked to the counter</h3>
+      <p>Set a PIN and the check-in screen becomes the only screen — no member can wander into your member list.</p>
+    </div>
+    <div class="feature">
+      <div class="icon" aria-hidden="true">📊</div>
+      <h3>Today at a glance</h3>
+      <p>A live feed of check-ins, how many members came through the door, and your opening hours for the week.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <h2 class="section-title">Common questions</h2>
+  <p class="section-lead">The things members and gym owners ask before they start.</p>
+  <div class="faq">
+    <details class="faq-item">
+      <summary>What is DigiGym?</summary>
+      <p>DigiGym is gym membership and check-in software. Members use it to see their plan and payment history, to check in at their gym with a QR code, and to review their own visit history. Gyms use it to keep their member roster, record plans and payments, set their opening hours, and admit members at the door.</p>
+    </details>
+    <details class="faq-item">
+      <summary>How do I check in at my gym?</summary>
+      <p>Open the app and show the check-in code on your screen. It is valid for sixty seconds and only at that one gym, and it is used up once the front desk scans it. If you would rather not use the app, the desk can check you in by your mobile number instead.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Do I need to install the app to be a member?</summary>
+      <p>No. Your gym can register you at the desk in under a minute, and you can then check in by mobile number without ever installing DigiGym. If you do install it later with the same number, your existing membership and payment records are matched to your account.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Does DigiGym take my membership payment?</summary>
+      <p>No. DigiGym does not process payments. You pay your gym the way you always have, and the gym records that payment against your plan so you can see it in the app. Your membership contract is with your gym, not with DigiGym.</p>
+    </details>
+    <details class="faq-item">
+      <summary>How do I sign in?</summary>
+      <p>With your mobile number and a one-time password sent by SMS — there is no password to remember. On Android you can instead verify in one tap with Truecaller if you prefer.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Is there a minimum age to use DigiGym?</summary>
+      <p>Yes. You must be at least 18 years old to create a DigiGym account and use the app.</p>
+    </details>
+  </div>
+</section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="copyright">&copy; 2026 DigiGym. All rights reserved.</div>
+    <nav class="legal-links" aria-label="Legal">
+      <a href="/privacy-policy.html">Privacy Policy</a>
+      <a href="/terms-of-service.html">Terms of Service</a>
+      <a href="/delete-account.html">Delete Account</a>
+      <a href="mailto:digigym.fit@gmail.com">Contact</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

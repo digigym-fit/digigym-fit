@@ -1,0 +1,481 @@
+/*
+ * digigym.fit
+ *
+ * The palette below is the same one the app ships (digigym-app/theme/palette.ts):
+ * a Material Design 3 tonal system seeded from the DigiGym brand blue. Keeping
+ * the two in step is the whole point — a client who opens the site and then the
+ * app should not be able to tell they were designed at different times.
+ *
+ * `--brand` is #2196F3, the identity colour. `--primary` is a few tones darker
+ * because white text on #2196F3 is 3.1:1, under WCAG AA for anything but large
+ * text; buttons and links use --primary, brand fields use --brand.
+ */
+
+:root {
+  color-scheme: light;
+
+  --brand: #2196f3;
+  --primary: #0f6fc4;
+  --primary-container: #d1e4ff;
+  --on-primary-container: #001d36;
+
+  --bg: #f7f9fc;
+  --surface: #ffffff;
+  --fg: #1a1c1e;
+  --muted: #43474e;
+  --border: #c3c7cf;
+  --border-soft: #dfe2eb;
+
+  --success: #186d32;
+  --shadow: 0 1px 2px rgba(16, 20, 24, 0.06), 0 4px 16px rgba(16, 20, 24, 0.05);
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  --max-width: 1040px;
+  --max-width-text: 720px;
+}
+
+/* Default for anyone who has not chosen: follow the OS. A manual choice writes
+   data-theme on <html>, and the rules below it win in both directions. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+
+    --brand: #4fb2ff;
+    --primary: #9ecaff;
+    --primary-container: #00497d;
+    --on-primary-container: #d1e4ff;
+
+    --bg: #101418;
+    --surface: #171c22;
+    --fg: #e2e2e6;
+    --muted: #c3c7cf;
+    --border: #3a3f46;
+    --border-soft: #2c3137;
+
+    --success: #87d991;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 4px 16px rgba(0, 0, 0, 0.3);
+  }
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --brand: #4fb2ff;
+  --primary: #9ecaff;
+  --primary-container: #00497d;
+  --on-primary-container: #d1e4ff;
+
+  --bg: #101418;
+  --surface: #171c22;
+  --fg: #e2e2e6;
+  --muted: #c3c7cf;
+  --border: #3a3f46;
+  --border-soft: #2c3137;
+
+  --success: #87d991;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--primary); }
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.wrap-text {
+  max-width: var(--max-width-text);
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+/* Header */
+header.site {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem;
+}
+
+header.site a.brand {
+  display: flex;
+  align-items: center;
+  /* No gap: "Digi" and "<span>Gym</span>" are two flex items, so any gap here
+     splits the wordmark down the middle. The mark is spaced by its own margin. */
+  gap: 0;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--fg);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+
+header.site a.brand img {
+  width: 30px;
+  height: 30px;
+  margin-right: 0.6rem;
+}
+
+header.site a.brand span { color: var(--brand); }
+
+/* Theme toggle */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.theme-toggle svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Only one of the two icons is ever shown, picked to match the active theme. */
+.theme-toggle .icon-moon { display: none; }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .theme-toggle .icon-sun { display: none; }
+  :root:not([data-theme='light']) .theme-toggle .icon-moon { display: block; }
+}
+
+:root[data-theme='dark'] .theme-toggle .icon-sun { display: none; }
+:root[data-theme='dark'] .theme-toggle .icon-moon { display: block; }
+:root[data-theme='light'] .theme-toggle .icon-sun { display: block; }
+:root[data-theme='light'] .theme-toggle .icon-moon { display: none; }
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 5rem 1.5rem 4rem;
+  background:
+    radial-gradient(
+      60rem 24rem at 50% -6rem,
+      color-mix(in srgb, var(--brand) 16%, transparent),
+      transparent 70%
+    );
+}
+
+.hero h1 {
+  font-size: clamp(2.25rem, 6vw, 3.25rem);
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  margin: 0 0 1rem;
+}
+
+/* The headline's two halves. Blocks here rather than a <br>, because the break
+   has to come out again on a narrow screen — and a hidden <br> would weld the
+   two halves into one word, where the whitespace between two inline spans
+   survives. */
+.hero h1 .line { display: block; }
+
+.hero p.tagline {
+  color: var(--muted);
+  font-size: 1.15rem;
+  max-width: 30rem;
+  margin: 0 auto;
+}
+
+.cta-row {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2.25rem;
+}
+
+.hero p.hero-note {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 1.25rem 0 0;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1.75rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.98rem;
+  border: 1px solid transparent;
+  transition: opacity 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--primary);
+  /* --primary is dark in light mode and light in dark mode, so the label has to
+     flip with it rather than being pinned to white. */
+  color: var(--bg);
+}
+
+:root[data-theme='light'] .btn-primary { color: #ffffff; }
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme='dark']) .btn-primary { color: #ffffff; }
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--fg);
+  border-color: var(--border);
+}
+
+.btn-primary:hover { opacity: 0.9; }
+.btn-secondary:hover { border-color: var(--primary); color: var(--primary); }
+
+/* Audience sections — "For members", "For gyms" */
+.section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 0;
+}
+
+.section:last-of-type { padding-bottom: 4rem; }
+
+.section-title {
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.35rem;
+}
+
+.section-lead {
+  color: var(--muted);
+  max-width: 38rem;
+  margin: 0 0 1.5rem;
+}
+
+/* Feature grid */
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 1rem 1.5rem 5rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* Inside a section the wrapper already supplies the width and gutters, so the
+   grid must not add a second set of its own. */
+.section .features {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 760px) {
+  .features { grid-template-columns: 1fr; }
+  .hero { padding-top: 3.5rem; }
+  .section { padding-top: 2rem; }
+  /* The headline's break is placed for a wide line. At this width the text
+     wraps on its own, and honouring both leaves a one-word orphan line. */
+  .hero h1 .line { display: inline; }
+}
+
+.feature {
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.feature .icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--primary-container);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  margin-bottom: 1rem;
+}
+
+.feature h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+}
+
+.feature p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* FAQ — <details> so the answers are in the markup for a crawler to read,
+   collapsed only for the reader. */
+.faq {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.faq-item {
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 1.35rem;
+  font-weight: 600;
+  font-size: 1.02rem;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  list-style: none;
+}
+
+/* Safari draws its own disclosure triangle through a pseudo-element that
+   `list-style: none` alone does not reach. */
+.faq-item summary::-webkit-details-marker { display: none; }
+
+.faq-item summary:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: -2px;
+  border-radius: var(--radius-lg);
+}
+
+/* A chevron drawn in CSS, rotated when the item opens — one less request than
+   an icon file, on a page that otherwise loads none. */
+.faq-item summary::after {
+  content: '';
+  flex: none;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-right: 0.25rem;
+  border-right: 2px solid var(--muted);
+  border-bottom: 2px solid var(--muted);
+  transform: rotate(45deg) translate(-0.12rem, -0.12rem);
+  transition: transform 0.15s ease;
+}
+
+.faq-item[open] summary::after {
+  transform: rotate(-135deg) translate(-0.12rem, -0.12rem);
+}
+
+.faq-item p {
+  margin: 0;
+  padding: 0 1.35rem 1.25rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-item summary::after { transition: none; }
+}
+
+/* Legal / text pages */
+h1 {
+  font-size: 2rem;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.25rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+  margin-top: 2.25rem;
+  letter-spacing: -0.015em;
+}
+
+.updated {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+p, li { color: var(--fg); }
+ul { padding-left: 1.25rem; }
+
+code {
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-sm);
+  padding: 0.1rem 0.4rem;
+  font-size: 0.9em;
+}
+
+/* Footer */
+footer.site {
+  border-top: 1px solid var(--border-soft);
+  margin-top: 2rem;
+}
+
+footer.site .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2.5rem;
+}
+
+footer.site .legal-links {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+footer.site a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+footer.site a:hover { color: var(--primary); }
+
+footer.site .copyright {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
